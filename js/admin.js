@@ -18,6 +18,7 @@ function getSpecificData(id){
     var companyname = data.company_name;
     var genderMale = data.male;
     var genderFemale = data.female;
+    var birthdate = data.birthdate;
     var wholesale = data.wholesale;
     var retailer = data.retailer;
     var mail = data.mail;
@@ -42,6 +43,7 @@ function getSpecificData(id){
     document.getElementById("mail").value = mail;
     document.getElementById("number").value = number;
     document.getElementById("dropdown").value = dropdown;
+    document.getElementById("birthdate").value = birthdate;
   });
 }
 
@@ -60,12 +62,13 @@ function getData(){
       var name = row.insertCell(1);
       var companyname = row.insertCell(2);
       var gender = row.insertCell(3);
-      var bussiness = row.insertCell(4);
-      var mail = row.insertCell(5);
-      var number = row.insertCell(6);
-      var dropdown = row.insertCell(7);
-      var cellAct = row.insertCell(8);
-      var cellDel = row.insertCell(9);
+      var birthdate = row.insertCell(4);
+      var bussiness = row.insertCell(5);
+      var mail = row.insertCell(6);
+      var number = row.insertCell(7);
+      var dropdown = row.insertCell(8);
+      var cellAct = row.insertCell(9);
+      var cellDel = row.insertCell(10);
 
       cellId.appendChild(document.createTextNode(childData.id));
       name.appendChild(document.createTextNode(childData.name));
@@ -97,6 +100,7 @@ function getData(){
       mail.appendChild(document.createTextNode(childData.mail));
       number.appendChild(document.createTextNode(childData.number));
       dropdown.appendChild(document.createTextNode(childData.dropdown));
+      birthdate.appendChild(document.createTextNode(childData.birthdate));
       
       var x = document.createElement("INPUT");
       x.setAttribute("type", "button");
@@ -132,6 +136,7 @@ function submitDataUP(){
   var company_name = document.getElementById("company_name").value;
   var male = document.getElementById("gender_male").checked;
   var female = document.getElementById("gender_female").checked;
+  var birthdate = document.getElementById("birthdate").value;
   var wholesale = document.getElementById("wholesale").checked;
   var retailer = document.getElementById("retailer").checked;
   var mail = document.getElementById("mail").value;
@@ -144,6 +149,7 @@ function submitDataUP(){
       company_name : company_name,
       male : male,
       female : female,
+      birthdate : birthdate,
       wholesale : wholesale,
       retailer : retailer,
       mail : mail,
